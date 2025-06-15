@@ -1,10 +1,30 @@
+
+
 # 🔬 Mini Project: 3DGS on FPV Drone Footage
-<br>
+
 
 ## 🎯 Project Strategy
-![alt text](image-1.png)
 
-<br>
+```mermaid
+flowchart TD
+    A["🏁 Weekend Exploration in 3DGS"] --> B["🖥️ Setup\nClone and install 3DGS repo"]
+    B --> C["📹 Data Input\nShort FPV drone footage"]
+    C --> D["🔬 Experimentation\n4 trials with different iterations, resolution, and depth regularization"]
+
+    D --> E1["📈 Trial 1: 7K Iterations\nResolution=2 (Baseline)"]
+    D --> E2["📉 Trial 2: 30K Iterations\nResolution=1 (Long training)"]
+    D --> E3["📊 Trial 3: 7K Iterations + Depth Reg\nResolution=2"]
+    D --> E4["🧠 Trial 4: 30K Iterations + Depth Reg\nResolution=1"]
+
+    E1 --> F["📑 Evaluation\nSSIM, PSNR, LPIPS"]
+    E2 --> F
+    E3 --> F
+    E4 --> F
+
+    F --> G["🎞️ Visualization\nVideo rendering & splats viewer links"]
+    G --> H["🚀 Insights\nTrade-offs in visual quality, overfitting & depth regularization"]
+```
+
 
 
 ## 📊 Evaluation Metrics
@@ -17,7 +37,7 @@
 | **30K + Depth Regularized**| 0.924   | 33.59     | 0.220   | [🔗 View](https://splatter.app/s/9gd-64n) |
 
 ---
-<br>
+
 
 #### Structural Similarity Index Measure (SSIM)
 
@@ -53,7 +73,6 @@
 
 `Focus`: Captures high-level perceptual differences (e.g., texture quality, color coherence) that pixel-based metrics like PSNR miss, aligning closely with human judgment.
 
-<br>
 
 ## 🧠 Key Observations
 
@@ -63,7 +82,6 @@
 - 🔁 At **30K with depth**, geometry improved **without harming SSIM**, but LPIPS still didn’t fully recover—suggesting texture inconsistency persists even with geometric accuracy.
 
 ---
-<br>
 
 ## 🧭 Summary & Motivation
 
